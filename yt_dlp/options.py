@@ -39,24 +39,29 @@ from .utils import (
 )
 from .version import CHANNEL, __version__
 
-# 在命令行参数正式解析前，先过滤需要忽略的选项及其参数
-ignored_options = {'--exp-allow', '--wild-allow'}
-filtered_argv = [sys.argv[0]]
-i = 1
-while i < len(sys.argv):
-    if sys.argv[i] in ignored_options:
-        # 如果下一参数存在且以双引号括住，则同时忽略
-        if i + 1 < len(sys.argv) and sys.argv[i+1].startswith('"') and sys.argv[i+1].endswith('"'):
-            i += 2
-        else:
-            i += 1
-    else:
-        filtered_argv.append(sys.argv[i])
-        i += 1
-sys.argv = filtered_argv
 
 def parseOpts(overrideArguments=None, ignore_config_files='if_override'):  # noqa: N803
     PACKAGE_NAME = 'yt-dlp'
+    
+    # 新增：预过滤掉指定的命令行选项及其参数
+    ignored_options = {"--exp-allow", "--wild-allow"}
+    def filter_args(args):
+        filtered = []
+        i = 0
+        while i < len(args):
+            if args[i] in ignored_options:
+                # 跳过该选项以及它的参数（如果存在）
+                i += 2
+            else:
+                filtered.append(args[i])
+                i += 1
+        return filtered
+
+    if overrideArguments is not None:
+        overrideArguments = filter_args(overrideArguments)
+    else:
+        # 如果未提供 overrideArguments，则处理 sys.argv（假设第一个参数为脚本名）
+        overrideArguments = filter_args(sys.argv[1:])
 
     root = Config(create_parser())
     if ignore_config_files == 'if_override':
