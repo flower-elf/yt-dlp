@@ -50,8 +50,7 @@ def parseOpts(overrideArguments=None, ignore_config_files='if_override'):  # noq
         i = 0
         while i < len(args):
             if args[i] in ignored_options:
-                # 跳过该选项以及它的参数（如果存在）
-                i += 2
+                i += 2  # 跳过该选项及其参数
             else:
                 filtered.append(args[i])
                 i += 1
