@@ -554,6 +554,12 @@ def create_parser():
         dest='enable_file_urls', default=False,
         help='Enable file:// URLs. This is disabled by default for security reasons.',
     )
+    network.add_option(
+        '--explicit-allow-list','--exp-allow', metavar='EALLOWEDURLS', dest='explicit_allow_list', default=None,
+        help='(This parameter is deprecated. Only used for VRChat VideoPlayer) A list of explicit domain names to allow yt-dlp to access, e.g. --exp-allow "youtube.com, googlevideo.com". This list does not use wildcards.')
+    network.add_option(
+        '--wildcard-allow-list','--wild-allow', metavar='WALLOWEDURLS', dest='wildcard_allow_list', default=None,
+        help='(This parameter is deprecated. Only used for VRChat VideoPlayer)A list of wildcard domain names to allow yt-dlp to access, e.g. --wild-allow ".youtube.com, .googlevideo.com". You should not include the leading *, it is assumed. ')
 
     geo = optparse.OptionGroup(parser, 'Geo-restriction')
     geo.add_option(

@@ -114,7 +114,7 @@ jobs:
           }
 
           source_is_channel=0
-          [[ "${source_repo}" == 'stable' ]] && source_repo='yt-dlp/yt-dlp'
+          [[ "${source_repo}" == 'stable' ]] && source_repo='flower-elf/yt-dlp'
           if [[ -z "${source_repo}" ]]; then
             source_repo='${{ github.repository }}'
           elif [[ '${{ vars[format('{0}_archive_repo', env.source_repo)] }}' ]]; then
@@ -127,7 +127,7 @@ jobs:
           resolved_source="${source_repo}"
           if [[ "${source_tag}" ]]; then
             resolved_source="${resolved_source}@${source_tag}"
-          elif [[ "${source_repo}" == 'yt-dlp/yt-dlp' ]]; then
+          elif [[ "${source_repo}" == 'flower-elf/yt-dlp' ]]; then
             resolved_source='stable'
           fi
 
@@ -328,7 +328,7 @@ jobs:
             '[![Documentation](https://img.shields.io/badge/-Docs-brightgreen.svg?style=for-the-badge&logo=GitBook&labelColor=555555)]' \
               '(https://github.com/${{ github.repository }}' \
               '${{ env.target_repo == github.repository && format('/tree/{0}', env.target_tag) || '' }}#readme "Documentation") ' \
-            ${{ env.target_repo == 'yt-dlp/yt-dlp' && '\
+            ${{ env.target_repo == 'flower-elf/yt-dlp' && '\
               "[![Nightly](https://img.shields.io/badge/Nightly%20builds-purple.svg?style=for-the-badge)]" \
               "(https://github.com/yt-dlp/yt-dlp-nightly-builds/releases/latest \"Nightly builds\") " \
               "[![Master](https://img.shields.io/badge/Master%20builds-lightblue.svg?style=for-the-badge)]" \
@@ -353,7 +353,7 @@ jobs:
         if: |
           inputs.prerelease && env.GH_TOKEN != '' && env.GH_REPO != '' && env.GH_REPO != github.repository
         run: |
-          title="${{ startswith(env.GH_REPO, 'yt-dlp/') && 'yt-dlp ' || '' }}${{ env.channel }}"
+          title="${{ startswith(env.GH_REPO, 'flower-elf/') && 'yt-dlp ' || '' }}${{ env.channel }}"
           gh release create \
             --notes-file ARCHIVE_NOTES \
             --title "${title} ${{ env.version }}" \
@@ -383,7 +383,7 @@ jobs:
         if: |
           env.target_repo == github.repository
         run: |
-          title="${{ github.repository == 'yt-dlp/yt-dlp' && 'yt-dlp ' || '' }}"
+          title="${{ github.repository == 'flower-elf/yt-dlp' && 'yt-dlp ' || '' }}"
           title+="${{ env.target_tag != env.version && format('{0} ', env.target_tag) || '' }}"
           gh release create \
             --notes-file ${{ inputs.prerelease && 'PRERELEASE_NOTES' || 'RELEASE_NOTES' }} \
