@@ -406,6 +406,19 @@ If you fork the project on GitHub, you can run your fork's [build workflow](.git
     -6, --force-ipv6                Make all connections via IPv6
     --enable-file-urls              Enable file:// URLs. This is disabled by
                                     default for security reasons.
+    --explicit-allow-list EALLOWEDURLS
+                                    (This parameter is deprecated. Only used for
+                                    VRChat VideoPlayer) A list of explicit
+                                    domain names to allow yt-dlp to access, e.g.
+                                    --exp-allow "youtube.com, googlevideo.com".
+                                    This list does not use wildcards.
+    --wildcard-allow-list WALLOWEDURLS
+                                    (This parameter is deprecated. Only used for
+                                    VRChat VideoPlayer)A list of wildcard domain
+                                    names to allow yt-dlp to access, e.g.
+                                    --wild-allow ".youtube.com,
+                                    .googlevideo.com". You should not include
+                                    the leading *, it is assumed.
 
 ## Geo-restriction:
     --geo-verification-proxy URL    Use this proxy to verify the IP address for
