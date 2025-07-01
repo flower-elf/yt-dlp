@@ -4,6 +4,12 @@
 # To create a release, dispatch the https://github.com/yt-dlp/yt-dlp/actions/workflows/release.yml workflow on master
 -->
 
+### 2025.07.01.191457
+
+#### Core changes
+- [Merge branch 'yt-dlp:master' into master](https://github.com/yt-dlp/yt-dlp/commit/521558eb45b5f610e2fe4f18901f37de5e616265) by [pukkandan](https://github.com/pukkandan)
+- [No longer enable `--mtime` by default](https://github.com/yt-dlp/yt-dlp/commit/f3008bc5f89d2691f2f8dfc51b406ef4e25281c3) ([#12781](https://github.com/yt-dlp/yt-dlp/issues/12781)) by [seproDev](https://github.com/seproDev)
+
 ### 2025.06.30
 
 #### Core changes
