@@ -413,6 +413,19 @@ If you fork the project on GitHub, you can run your fork's [build workflow](.git
     -6, --force-ipv6                Make all connections via IPv6
     --enable-file-urls              Enable file:// URLs. This is disabled by
                                     default for security reasons.
+    --explicit-allow-list EALLOWEDURLS
+                                    (This parameter is deprecated. Only used for
+                                    VRChat VideoPlayer) A list of explicit
+                                    domain names to allow yt-dlp to access, e.g.
+                                    --exp-allow "youtube.com, googlevideo.com".
+                                    This list does not use wildcards.
+    --wildcard-allow-list WALLOWEDURLS
+                                    (This parameter is deprecated. Only used for
+                                    VRChat VideoPlayer)A list of wildcard domain
+                                    names to allow yt-dlp to access, e.g.
+                                    --wild-allow ".youtube.com,
+                                    .googlevideo.com". You should not include
+                                    the leading *, it is assumed.
 
 ## Geo-restriction:
     --geo-verification-proxy URL    Use this proxy to verify the IP address for
@@ -639,9 +652,9 @@ If you fork the project on GitHub, you can run your fork's [build workflow](.git
     --no-part                       Do not use .part files - write directly into
                                     output file
     --mtime                         Use the Last-modified header to set the file
-                                    modification time (default)
+                                    modification time
     --no-mtime                      Do not use the Last-modified header to set
-                                    the file modification time
+                                    the file modification time (default)
     --write-description             Write video description to a .description file
     --no-write-description          Do not write video description (default)
     --write-info-json               Write video metadata to a .info.json file
