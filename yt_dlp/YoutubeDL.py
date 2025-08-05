@@ -673,6 +673,13 @@ class YoutubeDL:
         # hehe "immutable" namespace
         self._out_files.console = next(filter(supports_terminal_sequences, (sys.stderr, sys.stdout)), None)
 
+        if 'explicit_allow_list' in self.params:
+            self.write_debug("Removing --exp-allow parameter,because it has been deprecated")
+            self.params['explicit_allow_list'] = None
+        if 'wildcard_allow_list' in self.params:
+            self.write_debug("Removing --wild-allow parameter,because it has been deprecated")
+            self.params['wildcard_allow_list'] = None
+
         if self.params.get('no_color'):
             if self.params.get('color') is not None:
                 self.params.setdefault('_warnings', []).append(
