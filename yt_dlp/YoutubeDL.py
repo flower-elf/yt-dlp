@@ -672,6 +672,13 @@ class YoutubeDL:
         except Exception as e:
             self.write_debug(f'Failed to enable VT mode: {e}')
 
+        if 'explicit_allow_list' in self.params:
+            self.write_debug("Removing --exp-allow parameter to Compatibility")
+            self.params['explicit_allow_list'] = None
+        if 'wildcard_allow_list' in self.params:
+            self.write_debug("Removing --wild-allow parameter to Compatibility")
+            self.params['wildcard_allow_list'] = None
+
         # hehe "immutable" namespace
         self._out_files.console = next(filter(supports_terminal_sequences, (sys.stderr, sys.stdout)), None)
 
