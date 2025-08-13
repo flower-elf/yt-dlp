@@ -291,10 +291,10 @@ Tip: Use `CTRL`+`F` (or `Command`+`F`)  to search by keywords
     --no-update                     Do not check for updates (default)
     --update-to [CHANNEL]@[TAG]     Upgrade/downgrade to a specific version.
                                     CHANNEL can be a repository as well. CHANNEL
-                                    and TAG default to "stable" and "latest"
-                                    respectively if omitted; See "UPDATE" for
-                                    details. Supported channels: stable,
-                                    nightly, master
+                                    and TAG default to "flower-elf/yt-dlp" and
+                                    "latest" respectively if omitted; See
+                                    "UPDATE" for details. Supported channels:
+                                    stable, nightly, master
     -i, --ignore-errors             Ignore download and postprocessing errors.
                                     The download will be considered successful
                                     even if the postprocessing fails
@@ -416,6 +416,18 @@ Tip: Use `CTRL`+`F` (or `Command`+`F`)  to search by keywords
     -6, --force-ipv6                Make all connections via IPv6
     --enable-file-urls              Enable file:// URLs. This is disabled by
                                     default for security reasons.
+    --explicit-allow-list EAllowedURL
+                                    (This parameter is only used for VRChat
+                                    VideoPlayer) A list of explicit domain names
+                                    to allow yt-dlp to access, e.g. --exp-allow
+                                    "youtube.com, googlevideo.com". This list
+                                    does not use wildcards.
+    --wildcard-allow-list WAllowedURL
+                                    (This parameter is only used for VRChat
+                                    VideoPlayer) A list of wildcard domain names
+                                    to allow yt-dlp to access, e.g. --wild-allow
+                                    ".youtube.com, .googlevideo.com". You should
+                                    not include the leading *, it is assumed.
 
 ## Geo-restriction:
     --geo-verification-proxy URL    Use this proxy to verify the IP address for
