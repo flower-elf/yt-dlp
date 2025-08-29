@@ -268,8 +268,6 @@ jobs:
       - process
       - unix
       - linux_static
-      - linux_arm
-      - macos
       - windows
     runs-on: ubuntu-latest
     steps:
