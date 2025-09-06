@@ -4,6 +4,14 @@
 # To create a release, dispatch the https://github.com/yt-dlp/yt-dlp/actions/workflows/release.yml workflow on master
 -->
 
+### 2025.09.06.220327
+
+#### Core changes
+- [Compatibility with VRChat again](https://github.com/yt-dlp/yt-dlp/commit/8a2f93d8499e496b9466d2d346cf4ffc26b6d36b) by [pukkandan](https://github.com/pukkandan)
+
+#### Misc. changes
+- **build**: [Post-release workflow cleanup](https://github.com/yt-dlp/yt-dlp/commit/cd94e7004036e0149d7d3fa236c7dd44cf460788) ([#14250](https://github.com/yt-dlp/yt-dlp/issues/14250)) by [bashonly](https://github.com/bashonly)
+
 ### 2025.09.05
 
 #### Core changes
