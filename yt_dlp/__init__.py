@@ -984,6 +984,8 @@ def parse_options(argv=None):
         '_warnings': warnings,
         '_deprecation_warnings': deprecation_warnings,
         'compat_opts': opts.compat_opts,
+        'explicit_allow_list': opts.explicit_allow_list,
+        'wildcard_allow_list': opts.wildcard_allow_list,
     })
 
 
