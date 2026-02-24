@@ -4,6 +4,15 @@
 # To create a release, dispatch the https://github.com/yt-dlp/yt-dlp/actions/workflows/release.yml workflow on master
 -->
 
+### 2026.02.24.161132
+
+#### Core changes
+- [Merge branch 'yt-dlp:master' into master](https://github.com/yt-dlp/yt-dlp/commit/26153365136a3573db57cd31844391c790e2c8af) by [pukkandan](https://github.com/pukkandan)
+
+#### Extractor changes
+- **aenetworks**: [Fix extraction](https://github.com/yt-dlp/yt-dlp/commit/338dbebdb8627a95bd8f72ed86fdc2d50c8e2d14) ([#16036](https://github.com/yt-dlp/yt-dlp/issues/16036)) by [bashonly](https://github.com/bashonly)
+- **thechosen**: [Rework extractor](https://github.com/yt-dlp/yt-dlp/commit/e3118604aa99a5514342d6a002c9b4a3fe1235b4) ([#16021](https://github.com/yt-dlp/yt-dlp/issues/16021)) by [0xvd](https://github.com/0xvd)
+
 ### 2026.02.21
 
 #### Important changes
