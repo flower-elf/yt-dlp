@@ -4,6 +4,14 @@
 # To create a release, dispatch the https://github.com/yt-dlp/yt-dlp/actions/workflows/release.yml workflow on master
 -->
 
+### 2026.03.15.164303
+
+#### Core changes
+- [Merge branch 'yt-dlp:master' into master](https://github.com/yt-dlp/yt-dlp/commit/7ee1d654a7d831ade65d0628e5ef3dbb0aee614f) by [pukkandan](https://github.com/pukkandan)
+
+#### Misc. changes
+- **docs**: [Fix `player_client` extractor-arg documentation](https://github.com/yt-dlp/yt-dlp/commit/e68afb28277b4bee39726dbcbb06801edde9f659) ([#16235](https://github.com/yt-dlp/yt-dlp/issues/16235)) by [bashonly](https://github.com/bashonly)
+
 ### 2026.03.13
 
 #### Extractor changes
