@@ -465,6 +465,16 @@ Tip: Use `CTRL`+`F` (or `Command`+`F`)  to search by keywords
     -6, --force-ipv6                Make all connections via IPv6
     --enable-file-urls              Enable file:// URLs. This is disabled by
                                     default for security reasons.
+    --explicit-allow-list EALLOWEDURLS
+                                    (Accepted and ignored; passed by old VRChat
+                                    video players) Comma-separated list of
+                                    explicit domain names, e.g. --exp-allow
+                                    "youtube.com, googlevideo.com"
+    --wildcard-allow-list WALLOWEDURLS
+                                    (Accepted and ignored; passed by old VRChat
+                                    video players) Comma-separated list of
+                                    wildcard domain names, e.g. --wild-allow
+                                    ".youtube.com, .googlevideo.com"
 
 ## Geo-restriction:
     --geo-verification-proxy URL    Use this proxy to verify the IP address for

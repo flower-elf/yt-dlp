@@ -648,14 +648,22 @@ def create_parser():
         dest='enable_file_urls', default=False,
         help='Enable file:// URLs. This is disabled by default for security reasons.',
     )
+    # Only used by old VRChat video players, which pass these options when invoking yt-dlp.
+    # They are accepted and ignored: yt-dlp performs no domain filtering
     network.add_option(
-        '--explicit-allow-list','--exp-allow', metavar='EALLOWEDURLS', dest='explicit_allow_list', default=None,
-        help='(This parameter is only used for VRChat VideoPlayer) A list of explicit domain names to allow yt-dlp to access, e.g. --exp-allow "youtube.com, googlevideo.com". This list does not use wildcards.'
-    )
+        '--explicit-allow-list', '--exp-allow', metavar='EALLOWEDURLS',
+        dest='explicit_allow_list', default=None,
+        help=(
+            '(Accepted and ignored; passed by old VRChat video players) '
+            'Comma-separated list of explicit domain names, '
+            'e.g. --exp-allow "youtube.com, googlevideo.com"'))
     network.add_option(
-        '--wildcard-allow-list','--wild-allow', metavar='WALLOWEDURLS', dest='wildcard_allow_list', default=None,
-        help='(This parameter is only used for VRChat VideoPlayer) A list of wildcard domain names to allow yt-dlp to access, e.g. --wild-allow ".youtube.com, .googlevideo.com". You should not include the leading *, it is assumed. '
-    )
+        '--wildcard-allow-list', '--wild-allow', metavar='WALLOWEDURLS',
+        dest='wildcard_allow_list', default=None,
+        help=(
+            '(Accepted and ignored; passed by old VRChat video players) '
+            'Comma-separated list of wildcard domain names, '
+            'e.g. --wild-allow ".youtube.com, .googlevideo.com"'))
 
     geo = optparse.OptionGroup(parser, 'Geo-restriction')
     geo.add_option(
